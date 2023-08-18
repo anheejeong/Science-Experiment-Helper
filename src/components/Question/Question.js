@@ -1,22 +1,42 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 import classes from './Question.module.css';
+import List from "../List/List";
 
 const Question = props => {
     const [enteredQuestion, setEnteredQuestion] = useState('');
+    const history = useNavigate()
 
     const questionChangeHandler = (event) => {
         setEnteredQuestion(event.target.value);
         console.log(enteredQuestion);
     }
 
-    const submitHandler = (event) => {
+    const submitHandler = async (event) => {
         event.preventDefault();
 
-        const data = { question: enteredQuestion };
+        // const data = { question: enteredQuestion };
 
-        props.qnaClickHandler(data);
+        // props.qnaClickHandler(data);
 
-        setEnteredQuestion('');
+        // setEnteredQuestion('');
+
+        try {
+            await axios.get('http://localhost:5001/api/search/',
+                { params: { search: enteredQuestion } },
+                { withCredentials: true }
+            )
+                .then(res => {
+                    console.log(res.data)
+                    history('/experiment', { state: { form_data: res.data } })
+                })
+                .catch(e => {
+                    alert('wrong details')
+                })
+        } catch (e) {
+            console.log(e)
+        }
     }
 
     return (

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import Question from './components/Question/Question';
@@ -21,8 +22,14 @@ function App() {
 
   return (
     <React.Fragment>
-      {!qna && <Question qnaClickHandler={qnaClickHandler} />}
-      {qna && <List />}
+      {/* {!qna && <Question qnaClickHandler={qnaClickHandler} />}
+      {qna && <List />} */}
+      <BrowserRouter>
+        <Routes>
+          <Route path='/search' element={<Question />} />
+          <Route path='/experiment' element={<List />} />
+        </Routes>
+      </BrowserRouter>
     </React.Fragment>
   );
 }
