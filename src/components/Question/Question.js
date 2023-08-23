@@ -23,13 +23,13 @@ const Question = props => {
         // setEnteredQuestion('');
 
         try {
-            await axios.get('http://localhost:5001/api/search/',
+            await axios.get('http://localhost:5000/api/search/',
                 { params: { search: enteredQuestion } },
                 { withCredentials: true }
             )
                 .then(res => {
                     console.log(res.data)
-                    history('/experiment', { state: { form_data: res.data } })
+                    history('/experiment', { state: { form_data: res.data, search: enteredQuestion } })
                 })
                 .catch(e => {
                     alert('wrong details')
