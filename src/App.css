@@ -1,7 +1,12 @@
+html,
 body {
-    height: 100vh;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
     background-color: #fdb549;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }

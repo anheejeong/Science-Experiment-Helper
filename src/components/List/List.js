@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Result from "../Result/Result";
+import classes from './List.module.css';
 
 const List = () => {
     const location = useLocation();
@@ -9,6 +10,9 @@ const List = () => {
 
     return (
         <React.Fragment>
+            <div className={classes.title}>
+                <h1>search key word '{location.state.search}' Result</h1>
+            </div>
             <ul>
                 {location.state.form_data.map((data) => (
                     <Result

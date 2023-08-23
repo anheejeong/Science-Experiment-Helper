@@ -1,0 +1,8 @@
+.result {
+    list-style-type: none;
+    padding-bottom: 3vh;
+}
+
+.result label {
+    font-size: 2.2vh;
+}
