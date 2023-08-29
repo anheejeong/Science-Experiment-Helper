@@ -19,6 +19,9 @@ const List = () => {
                         key={data.id}
                         topic={data.topic}
                         hypothesis={data.hypothesis}
+                        materials={data.materials}
+                        process={data.process}
+                        result={data.result}
                     />
                 ))}
             </ul>

@@ -6,3 +6,11 @@
 .result label {
     font-size: 2.2vh;
 }
+
+.result div {
+    margin-bottom: 2vh;
+}
+
+.result div:last-child {
+    margin-bottom: 0;
+}

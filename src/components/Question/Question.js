@@ -25,7 +25,7 @@ const Question = props => {
         // setEnteredQuestion('');
 
         try {
-            await axios.get('http://localhost:5000/api/search/',
+            await axios.get('http://localhost:5001/api/search/',
                 { params: { search: enteredQuestion } },
                 { withCredentials: true }
             )
