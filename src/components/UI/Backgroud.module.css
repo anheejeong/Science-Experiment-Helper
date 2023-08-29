@@ -1,0 +1,25 @@
+.background {
+    height: 30%;
+    width: 140vh;
+    display: flex;
+    justify-content: center;
+    left: 0;
+}
+
+.background div {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.background img {
+    opacity: 0.4;
+    display: inline-block;
+    width: 8vh;
+    height: 8vh;
+    position: absolute;
+    bottom: 2vh;
+    padding: 0;
+    padding-left: 0;
+}

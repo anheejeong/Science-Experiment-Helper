@@ -4,6 +4,7 @@ import './App.css';
 
 import Question from './components/Question/Question';
 import List from './components/List/List';
+import Safety from './components/Safety/Safety';
 
 function App() {
   let question;
@@ -27,6 +28,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/search' element={<Question />} />
+          <Route path='/safety' element={<Safety />} />
           <Route path='/experiment' element={<List />} />
         </Routes>
       </BrowserRouter>
